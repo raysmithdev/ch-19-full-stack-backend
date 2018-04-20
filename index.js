@@ -22,6 +22,17 @@ app.use(
   })
 );
 
+app.get('/api/users', (req,res) => {
+  // use mongoose or knex to get the data from your database
+
+  const users = [
+    {name: 'Ray'},
+    {name: 'James'}
+  ]
+
+  res.json(users)
+})
+
 function runServer(port = PORT) {
   const server = app
     .listen(port, () => {
